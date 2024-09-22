@@ -50,7 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION['loggedin'] = true;
 
                 http_response_code(200); // OK
-                echo json_encode(["success" => "Inicio de sesión exitoso."]);
+                echo json_encode([
+                    "success" => "Inicio de sesión exitoso.",
+                    "user" => [
+                        "name" => $user['name'],
+                        "role_id" => $user['role_id']
+                    ]
+                ]);
             } else {
                 echo json_encode(["error" => "La contraseña es incorrecta."]);
             } 
