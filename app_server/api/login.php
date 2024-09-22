@@ -54,7 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     "success" => "Inicio de sesión exitoso.",
                     "user" => [
                         "name" => $user['name'],
-                        "role_id" => $user['role_id']
+                        "role_id" => $user['role_id'],
+                        "id" => $user['id']
                     ]
                 ]);
             } else {
